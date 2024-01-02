@@ -2,15 +2,14 @@
   <div class="content">
     <div class="">
       <!-- <h1>{{ msg }}</h1> -->
-      <h1>Your Chats</h1>
+      <h1>Your Chats with Friends</h1>
     </div>
   </div>
   <div class="list">
-    <h2>Your friends</h2>
+    <h2>Your Friends</h2>
     <ul>
       <li v-for="item in users" :key="item.social">
-       
-       <h3 class="friends">{{ item.username }}</h3>
+        <h3 class="friends">{{ item.username }}</h3>
         ({{ item.followers }} followers)
       </li>
     </ul>
@@ -59,7 +58,7 @@ export default {
   text-align: center;
   margin: auto;
 }
-.friends{
+.friends {
   color: orange;
 }
 .list {
