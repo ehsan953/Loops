@@ -16,39 +16,29 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "InboxPage",
-  // props: {
-  //   msg: String
-  // }
-  data() {
-    return {
-      users: [
-        {
-          username: "Muhammad Ehsan",
-          followers: "2.5k",
-        },
-        {
-          username: "Ehsan Rajpoot",
-          followers: "1.2k",
-        },
-        {
-          username: "Abdullah Murad",
-          followers: "1.5k",
-        },
-        {
-          username: "Awais Somroo",
-          followers: "1.5k",
-        },
-        {
-          username: "Raheel Niaz",
-          followers: "1.5k",
-        },
-      ],
-    };
+<script setup>
+const users = [
+  {
+    username: "Muhammad Ehsan",
+    followers: "2.5k",
   },
-};
+  {
+    username: "Ehsan Rajpoot",
+    followers: "1.2k",
+  },
+  {
+    username: "Abdullah Murad",
+    followers: "1.5k",
+  },
+  {
+    username: "Awais Somroo",
+    followers: "1.5k",
+  },
+  {
+    username: "Raheel Niaz",
+    followers: "1.5k",
+  },
+];
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
