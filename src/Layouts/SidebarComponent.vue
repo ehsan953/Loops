@@ -44,6 +44,7 @@ const routes = [
 <style scoped>
 .sidebar {
   padding: 0.5rem;
+  /* height: 100%; */
   /* overflow-y: auto; */
 }
 .profile-detail {

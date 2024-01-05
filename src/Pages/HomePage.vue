@@ -27,7 +27,8 @@
     <!-- using template ref -->
     <div>
       <label for="user">Username : </label>
-      <input type="text" id="user" ref="inputRef" />
+      <input type="text" id="user" ref="inputRef" v-model="message" />
+      <p>Username is : {{ message }}</p>
     </div>
 
     <!-- conditional rendering -->
@@ -39,11 +40,19 @@
       <p v-show="isVisible">This paragraph will be Toggle.</p>
     </div>
   </div>
+
+  <div>
+    <h1>Computed : {{ comMsg }}</h1>
+    <input type="text" v-model="a" />
+    <input type="text" v-model="b" />
+    <h1>watcher : {{ msg }}</h1>
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watchEffect } from "vue";
+import { ref, onMounted, watchEffect, watch, computed } from "vue";
 const inputRef = ref(null);
+const message = ref("");
 console.log(inputRef.value);
 onMounted(() => {
   // console.log(inputRef.value); // this console will give us reference of whole element
@@ -56,6 +65,19 @@ watchEffect(() => {
     console.log("not mounted yet, or the element was unmounted");
     // not mounted yet, or the element was unmounted (e.g. by v-if)
   }
+});
+
+const msg = ref(0);
+const a = ref(0);
+const b = ref(0);
+const comMsg = computed(() => {
+  return Number(a.value) + Number(b.value);
+});
+watch(a, () => {
+  msg.value = Number(a.value) + Number(b.value);
+});
+watch(b, () => {
+  msg.value = Number(a.value) + Number(b.value);
 });
 
 const dataRef = ref(null);
@@ -89,7 +111,7 @@ const users = [
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .content {
-  width: 60%;
+  width: 70%;
   text-align: center;
   margin: auto;
 }
